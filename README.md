@@ -45,7 +45,7 @@ It is designed for learning and local lab practice.
 Install test dependency:
 
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ## Usage
@@ -55,16 +55,16 @@ Run commands from the repository root:
 ### 1) Password audit
 
 ```bash
-python main.py password-audit "MyWeakPass"
+python3 main.py password-audit "MyWeakPass"
 ```
 
 Example output:
 
 ```json
 {
-  "score": 3,
+  "score": 2,
   "max_score": 5,
-  "rating": "medium",
+  "rating": "weak",
   "checks": {
     "length_12_plus": false,
     "has_lowercase": true,
@@ -83,13 +83,13 @@ Example output:
 ### 2) Hash a file
 
 ```bash
-python main.py hash-file README.md --algorithm sha256
+python3 main.py hash-file README.md --algorithm sha256
 ```
 
 ### 3) Verify file hash
 
 ```bash
-python main.py verify-hash README.md "<expected_hash>" --algorithm sha256
+python3 main.py verify-hash README.md "<expected_hash>" --algorithm sha256
 ```
 
 If the hash matches, output is:
@@ -101,13 +101,13 @@ If the hash matches, output is:
 ### 4) Port scan (local/authorized only)
 
 ```bash
-python main.py port-scan 127.0.0.1 20 1024 --timeout 0.2
+python3 main.py port-scan 127.0.0.1 20 1024 --timeout 0.2
 ```
 
 ## Run Tests
 
 ```bash
-pytest -q
+python3 -m pytest -q
 ```
 
 ## Important Security Note
